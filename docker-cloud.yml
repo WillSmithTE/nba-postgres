@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+    postgres:
+      container_name: nbaratings
+      image: postgres
+      restart: always
+      environment:
+        POSTGRES_USER: nbaratings
+        POSTGRES_PASSWORD: nbaratings
+        POSTGRES_DB: nbaratings
+      ports:
+        - "5432:5432"
+      networks:
+        - postgres
+
+networks:
+  postgres:
+    driver: bridge
